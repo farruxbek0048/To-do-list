@@ -1,11 +1,14 @@
-body{
-    font-family: sans-serif;
-    background-color: #F1F1F1;
-    
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
 
-ul li{
-    list-style: none;
+body{
+    width: 100%;
+    height: 100vh;
+    font-family: sans-serif;
+    background-color: #f1f1f1;
 }
 
 .calendar{
@@ -27,6 +30,210 @@ ul li{
     font-size: 64px;
     font-weight: 600;
     color: #000000;
+}
+
+.todo-list{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.todo-list .adding-input{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    border-radius: 30px;
+}
+
+.todo-list .adding-input input{
+    width: 90%;
+    padding: 20px;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+.todo-list .adding-input span{
+    position: absolute;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color:#32CD32;
+    cursor: pointer;
+    font-size: 48px;
+    font-weight: 600;
+    color: #252525;
+}
+
+.todo-list .message{
+    text-align: center;
+    font-size: 22px;
+    display: none;
+    transition: 0.3 ease;
+}
+
+.todo-list .message.active{
+    color: #32CD32;
+    display: block;
+}
+
+.todo-list .message.error{
+    display: block;
+    color: red;
+}
+
+.todo-list ul{
+    width: 100%;
+    height: 400px;
+    overflow: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 10px;
+}
+
+.todo-list li{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.todo-list li .name{
+    width: 80%;
+    color: #252525;
+    font-size: 18px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.todo-list li.complated .name{
+    text-decoration: line-through;
+    color: gray;
+}
+
+.todo-list .actions{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.todo-list .actions :nth-child(1){
+    font-size: 20px;
+    color: #ffc400;
+}
+
+.todo-list .actions :nth-child(2){
+    font-size: 20ox;
+    color: red;
+}
+
+.overlay.active{
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #797575;
+}
+
+.delete-modal,
+.edit-modal{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 400px;
+    width: 100%;
+    height: auto;
+    padding: 10px 20px;
+    border-radius: 15px;
+    background-color: white;
+    z-index: 100;
+    display: none;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.delete-modal.active,
+.edit-modal.active{
+    display: flex;
+}
+
+.delete-modal .actions,
+.edit-modal .actions{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 20px;
+}
+
+.delete-modal .actions #close-modal-item,
+.edit-modal .actions #close-modal-edit{
+    background-color: #6565ff;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.edit-modal .actions #save-modal-item{
+    background-color: #32CD32;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.delete-modal .actions #delete-modal-item,
+.edit-modal .actions #delete-modal-item{
+    background-color: red;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.edit-modal .edit-input{
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+/* body{
+    font-family: sans-serif;
+    background-color: #F1F1F1;
+    
+}
+
+ul li{
+    list-style: none;
+}
 }
 
 .todolist{
@@ -82,4 +289,4 @@ ul .checked{
     color: #686767;
 }
 
-
+ */

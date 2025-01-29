@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>To do list</title>
     <link rel="stylesheet" href="./style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
@@ -12,22 +12,35 @@
         <div class="time">00:00</div>
         <div class="date">4-aprel, 2005</div>
     </div>
-    <div class="todolist">
-        <div class="task-add">
-            <input type="text" placeholder="Enter task...">
-            <button>
-                <i class="fa-solid fa-plus"></i>
-            </button>
+
+    <div class="todo-list">
+        <div class="adding-input">
+            <input id="task-input" type="text" placeholder="Enter task...">
+            <span class="add-item">+</span>
         </div>
-        <ul id="task-list">
-            <li class="checked">aaaa</li>
-            <li>sssss</li>
-            <li>dddf</li>
-            <li>ggggg</li>
-            <li>jkl</li>
-        </ul>
+        <div class="message" id="message"></div>
+            <ul id="ul-items">
+
+            </ul>
+    </div>
+    <div class="delete-modal" id="delete-modal">
+        <div class="delete-title">O'chirish</div>
+        <div class="task"></div>
+        <div class="actions">
+            <button id="close-modal-item">Bekor qilish</button>
+            <button id="delete-modal-item">O'chirish</button>
+        </div>
+    </div>
+    <div class="edit-modal" id="edit-modal">
+        <div class="modal-title">Tahrirlash</div>
+        <input type="text" class="edit-input" id="edit-input">
+        <div class="actions">
+            <button id="close-modal-edit">Bekor qilish</button>
+            <button id="save-modal-item">Saqlash</button>
+        </div>
     </div>
 
+    <div class="overlay"></div>
 
 
     <script src="./app.js"></script>
